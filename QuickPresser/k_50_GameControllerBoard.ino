@@ -16,6 +16,13 @@ void setup_controller() {
 	pinMode(pinControllerLed_G, OUTPUT);
 	pinMode(pinControllerLed_R, OUTPUT);
 }
+bool areBothButtonsPressed() {
+	bool ret = false;
+	if ((digitalRead(BtnRed.Pin) == LOW) && (digitalRead(BtnGreen.Pin) == LOW)) {
+		ret = true;
+	}
+	return ret;
+}
 bool isRedBtnPressed() {
 	bool ret = false;
 	int val = digitalRead(BtnRed.Pin);

@@ -56,9 +56,9 @@ void showLevel(int gameLevel, int refresh_time) {
 }
 void showFinishedScore(int gameScore, int refresh_time) {
     char* data = "----";
-    data[1] = char('0' + gameScore % 10);
+    data[2] = char('0' + gameScore % 10);
     if (gameScore >= 10) {
-        data[2] = char('0' + (gameScore / 10) % 10);
+        data[1] = char('0' + (gameScore / 10) % 10);
     }
     my4x7seg.write(data, 4);
     my4x7seg.refresh(refresh_time);
